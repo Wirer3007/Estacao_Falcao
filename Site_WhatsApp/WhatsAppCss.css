@@ -1,0 +1,375 @@
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #171614;
+        color: #f8f5ee;
+    }
+
+
+
+    .menu {
+        min-height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 200px;
+        padding: 18px;
+        background: #171614;
+        border-bottom: 1px solid #51442a;
+    }
+
+    .menu a {
+        color: #f4d98b;
+        text-decoration: none;
+        font-size: 27px;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: white;
+    }
+
+    .menu a.ativo {
+        color: #f2d78b;
+        border-bottom: 2px solid #f2d78b;
+        padding-bottom: 5px;
+    }
+
+
+
+    .Banner {
+        position: relative;
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        padding: 45px 5%;
+        overflow: hidden;
+    }
+
+    #imagemBanner {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.48;
+    }
+
+
+
+    .Banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(15, 14, 12, 0.2),
+            rgba(15, 14, 12, 0.65) 48%,
+            #171614 100%
+        );
+        pointer-events: none;
+    }
+
+
+
+    .apresentacao {
+        position: relative;
+        z-index: 1;
+        width: 48%;
+        max-width: 650px;
+        margin-left: auto;
+        padding: 25px;
+    }
+
+    #logo {
+        display: block;
+        width: 180px;
+        max-width: 70%;
+        height: auto;
+        margin-bottom: 25px;
+        z-index: 1;
+    }
+
+    #legenda {
+        margin: 0 0 20px;
+        font-family: Georgia, serif;
+        font-size: clamp(34px, 3.5vw, 58px);
+        line-height: 1.15;
+        font-weight: normal;
+        color: #f2d78b;
+    }
+
+    .subtitulo {
+        max-width: 480px;
+        color: #e3dfd5;
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .botao {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 24px;
+        border: 1px solid #d7b967;
+        color: #f2d78b;
+        text-decoration: none;
+        transition: 0.3s;
+        border-radius: 6px;
+    }
+
+    .botao:hover {
+        background: #d7b967;
+        color: #171614;
+    }
+
+
+
+    #corpo {
+        background: #201e1a;
+    }
+
+    .historia {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 60px;
+        padding: 100px 8%;
+    }
+
+    .texto-historia {
+        flex: 1;
+    }
+
+    .detalhe {
+        color: #d7b967;
+        font-size: 30px;
+        letter-spacing: 4px;
+    }
+
+    .historia h2,
+    .destaques > h2 {
+        font-family: Georgia, serif;
+        font-size: clamp(30px, 3vw, 44px);
+        font-weight: normal;
+        line-height: 1.25;
+    }
+
+    .historia p {
+        color: #c9c4b8;
+        font-size: 30px;
+        line-height: 1.9;
+    }
+
+    .historia > img {
+        width: 45%;
+        max-width: 520px;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+        border-radius: 4px;
+    }
+
+
+
+    .destaques {
+        padding: 70px 7% 100px;
+        text-align: center;
+    }
+
+    .destaques > h2 {
+        margin-bottom: 45px;
+    }
+
+    .cartoes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 28px;
+        text-align: left;
+    }
+
+    .cartao {
+        background: #292620;
+        padding-bottom: 25px;
+    }
+
+    .cartao img {
+        display: block;
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+    }
+
+    .cartao h3 {
+        margin: 24px 22px 12px;
+        color: #f2d78b;
+        font-family: Georgia, serif;
+        font-size: 30px;
+        font-weight: normal;
+    }
+
+    .cartao p {
+        margin: 0 22px;
+        color: #c9c4b8;
+        line-height: 1.8;
+        font-size: 25px;
+    }
+
+
+
+ .redes-sociais {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .redes-sociais a {
+        color: #f2d78b;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .redes-sociais a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    footer {
+        padding: 30px 15px;
+        text-align: center;
+        color: #bdb5a3;
+        background: #11100e;
+        font-size: 14px;
+    }
+
+  
+
+
+
+@media (max-width: 600px) {
+
+    .menu {
+        min-height: auto;
+        gap: 12px;
+        padding: 16px 8px;
+    }
+
+    .menu a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .menu a.ativo {
+        color: #f2d78b;
+        border-bottom: 2px solid #f2d78b;
+        padding-bottom: 5px;
+    }
+
+    .Banner {
+        min-height: 680px;
+        padding: 25px 6%;
+        align-items: flex-end;
+    }
+
+    #imagemBanner {
+        object-position: center;
+        opacity: 0.4;
+    }
+
+    .Banner::after {
+        background: linear-gradient(
+            0deg,
+            rgba(23, 22, 20, 0.98),
+            rgba(23, 22, 20, 0.35)
+        );
+    }
+
+    .apresentacao {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 15px 5px 35px;
+    }
+
+    #logo {
+        width: 125px;
+        max-width: 55%;
+        margin-bottom: 50px;
+    }
+
+    #legenda {
+        font-size: 34px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .historia {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 30px;
+        padding: 60px 7%;
+    }
+
+    .historia > img {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 4 / 3;
+    }
+
+    .destaques {
+        padding: 50px 7%;
+    }
+
+    .cartoes {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .cartao img {
+        height: 240px;
+    }
+
+    .redes-sociais {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .redes-sociais a {
+        color: #f2d78b;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .redes-sociais a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    footer {
+        padding: 30px 15px;
+        text-align: center;
+        color: #bdb5a3;
+        background: #11100e;
+        font-size: 14px;
+    }
+    
+
+}

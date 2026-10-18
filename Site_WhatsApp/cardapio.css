@@ -1,0 +1,528 @@
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #171614;
+        color: #f8f5ee;
+    }
+
+
+    .menu {
+        min-height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 200px;
+        padding: 18px;
+        background: #171614;
+        border-bottom: 1px solid #51442a;
+    }
+
+    .menu a {
+        color: #f4d98b;
+        text-decoration: none;
+        font-size: 27px;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: white;
+    }
+
+    .menu a.ativo {
+        color: #f2d78b;
+        border-bottom: 2px solid #f2d78b;
+        padding-bottom: 5px;
+    }
+
+
+    .Banner {
+        position: relative;
+        min-height: 650px;
+        display: flex;
+        align-items: center;
+        padding: 45px 5%;
+        overflow: hidden;
+    }
+
+    #imagemBanner {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.48;
+    }
+
+    .Banner::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            90deg,
+            rgba(15, 14, 12, 0.2),
+            rgba(15, 14, 12, 0.65) 48%,
+            #171614 100%
+        );
+        pointer-events: none;
+    }
+
+    .apresentacao {
+        position: relative;
+        z-index: 1;
+        width: 48%;
+        max-width: 650px;
+        margin-left: auto;
+        padding: 25px;
+    }
+
+    #logo {
+        display: block;
+        width: 180px;
+        max-width: 70%;
+        height: auto;
+        margin-bottom: 25px;
+    }
+
+    #legenda {
+        margin: 0 0 20px;
+        font-family: Georgia, serif;
+        font-size: clamp(34px, 3.5vw, 58px);
+        line-height: 1.15;
+        font-weight: normal;
+        color: #f2d78b;
+    }
+
+    .subtitulo {
+        max-width: 480px;
+        color: #e3dfd5;
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .botao {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 24px;
+        border: 1px solid #d7b967;
+        color: #f2d78b;
+        text-decoration: none;
+        transition: 0.3s;
+        border-radius: 6px;
+    }
+
+    .botao:hover {
+        background: #d7b967;
+        color: #171614;
+    }
+
+
+    .cardapios {
+        padding: 70px 7%;
+        background: #201e1a;
+    }
+
+    #opcoesCardapio {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .card-cardapio {
+        overflow: hidden;
+        background: #292620;
+        border: 1px solid #51442a;
+        border-radius: 10px;
+        text-align: center;
+        padding-bottom: 28px;
+        transition: transform 0.3s, border-color 0.3s;
+    }
+
+    .card-cardapio:hover {
+        transform: translateY(-5px);
+        border-color: #d7b967;
+    }
+
+    .card-cardapio img {
+        display: block;
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .card-cardapio h2 {
+        margin: 25px 12px 20px;
+        color: #f2d78b;
+        font-family: Georgia, serif;
+        font-size: 28px;
+        font-weight: normal;
+    }
+
+    .card-cardapio button,
+    #visualizador button,
+    #descricao button {
+        padding: 12px 22px;
+        background: transparent;
+        border: 1px solid #d7b967;
+        border-radius: 5px;
+        color: #f2d78b;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background 0.3s, color 0.3s;
+    }
+
+    .card-cardapio button:hover,
+    #visualizador button:hover,
+    #descricao button:hover {
+        background: #d7b967;
+        color: #171614;
+    }
+
+
+    #visualizador {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 65px 65px 30px;
+        background: #292620;
+        border: 1px solid #51442a;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    #visualizador #fechar {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        padding: 7px 12px;
+        font-size: 22px;
+    }
+
+    #imagemAtual {
+        display: block;
+        width: 100%;
+        max-height: 70vh;
+        object-fit: contain;
+        margin: 0 auto 20px;
+    }
+
+    #contador {
+        color: #c9c4b8;
+        font-size: 15px;
+        margin: 18px 0;
+    }
+
+    #visualizador #anterior,
+    #visualizador #proximo {
+        margin: 5px;
+        min-width: 48px;
+        font-size: 22px;
+    }
+
+
+    #descricao {
+        max-width: 1000px;
+        margin: 25px auto 0;
+        padding: 30px;
+        background: #292620;
+        border: 1px solid #51442a;
+        border-radius: 10px;
+        color: #e3dfd5;
+        line-height: 1.8;
+    }
+
+    #descricao h2 {
+        color: #f2d78b;
+        font-family: Georgia, serif;
+        font-weight: normal;
+    }
+
+
+    .oculto {
+        display: none !important;
+    }
+
+
+    .galeria-comidas {
+        padding: 80px 7%;
+        background: #171614;
+    }
+
+    .galeria-comidas > h2,
+    .galeria-comidas > p {
+        text-align: center;
+    }
+
+    .galeria-comidas > h2 {
+        margin: 0 0 15px;
+        color: #f2d78b;
+        font-family: Georgia, serif;
+        font-size: clamp(30px, 3vw, 42px);
+        font-weight: normal;
+    }
+
+    .galeria-comidas > p {
+        margin: 0 auto 55px;
+        max-width: 650px;
+        color: #c9c4b8;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+
+    .fotos-comidas {
+        display: flex;
+        flex-direction: column;
+        gap: 45px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .foto-comida {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        align-items: center;
+        gap: 45px;
+        padding: 22px;
+        background: #211f1b;
+        border: 1px solid #3f3727;
+        border-radius: 12px;
+        transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .foto-comida:hover {
+        border-color: #b89b52;
+        transform: translateY(-3px);
+    }
+
+    .foto-comida img {
+        display: block;
+        width: 100%;
+        height: 360px;
+        object-fit: cover;
+        border-radius: 7px;
+    }
+
+    .nome-comida {
+        margin: 0;
+        padding: 15px;
+        color: #e3dfd5;
+        font-family: Arial, sans-serif;
+        font-size: 28px;
+        font-weight: normal;
+        line-height: 1.9;
+    }
+
+    .nome-comida::first-line {
+        color: #c9bd9c;
+    }
+
+    .foto-comida:nth-child(even) img {
+        order: 2;
+    }
+
+    .foto-comida:nth-child(even) .nome-comida {
+        order: 1;
+    }
+    .redes-sociais {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .redes-sociais a {
+        color: #f2d78b;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    .redes-sociais a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+    .rodape {
+    padding: 25px 7%;
+    text-align: center;
+    background: #201e1a;
+    border-top: 1px solid #51442a;
+    }
+
+    .rodape p {
+        color: #c9c4b8;
+        font-size: 20px;
+        line-height: 1.7;
+    }
+@media (max-width: 900px) {
+    .menu {
+        gap: 50px;
+    }
+    
+
+    .foto-comida {
+        gap: 25px;
+    }
+
+    .foto-comida img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 700px) {
+    .menu {
+        min-height: auto;
+        gap: 12px;
+        padding: 16px 8px;
+    }
+
+    .menu a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .menu a.ativo {
+        color: #f2d78b;
+        border-bottom: 2px solid #f2d78b;
+        padding-bottom: 5px;
+    }
+
+    .Banner {
+        min-height: 680px;
+        padding: 25px 6%;
+        align-items: flex-end;
+    }
+
+    #imagemBanner {
+        object-position: center;
+        opacity: 0.4;
+    }
+
+    .Banner::after {
+        background: linear-gradient(
+            0deg,
+            rgba(23, 22, 20, 0.98),
+            rgba(23, 22, 20, 0.35)
+        );
+    }
+
+    .apresentacao {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 15px 5px 35px;
+    }
+
+    #logo {
+        width: 125px;
+        max-width: 55%;
+        margin-bottom: 50px;
+    }
+
+    #legenda {
+        font-size: 34px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+   
+    .cardapios {
+        padding: 40px 6%;
+    }
+
+    #opcoesCardapio {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .card-cardapio img {
+        height: 240px;
+    }
+
+    .card-cardapio h2 {
+        font-size: 24px;
+    }
+
+    
+    #visualizador {
+        padding: 65px 12px 25px;
+    }
+
+    #imagemAtual {
+        max-height: 65vh;
+    }
+
+    #descricao {
+        padding: 20px;
+    }
+
+   
+    .galeria-comidas {
+        padding: 50px 5%;
+    }
+
+    .galeria-comidas > p {
+        margin-bottom: 35px;
+        font-size: 15px;
+    }
+
+    .fotos-comidas {
+        gap: 28px;
+    }
+
+    .foto-comida {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .foto-comida img {
+        height: 260px;
+    }
+
+    .nome-comida {
+        padding: 10px 5px 15px;
+        font-size: 22px;
+        line-height: 1.8;
+    }
+
+    
+    .foto-comida:nth-child(even) img,
+    .foto-comida:nth-child(even) .nome-comida {
+        order: initial;
+    }
+    .redes-sociais {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .redes-sociais a {
+        color: #f2d78b;
+        text-decoration: none;
+        font-size: 16px;
+        transition: 0.3s;
+    }
+
+    .redes-sociais a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio | Estação Falcão</title>
+    <link rel="stylesheet" href="cardapio.css">
+</head>
+<body>
+
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="cardapio.html" class="ativo">Cardápio</a>
+        <a href="galeria.html">Galeria</a>
+    </nav>
+
+    <header class="Banner">
+
+        <img id="imagemBanner" src="PistaDança.jpg" alt="Espaço de eventos">
+
+        <div class="apresentacao">
+            <img id="logo" src="31859.png" alt="Logo Estação Falcão">
+
+            <h1 id="legenda">
+                Momentos únicos.<br>
+                Sabores extraordinários.
+            </h1>
+
+            <p class="subtitulo">
+                Descubra o cardápio da Estação Falcão, onde cada prato proporciona uma experiência gastronômica especial.
+                De entradas irresistíveis a sobremesas deliciosas, nosso menu é cuidadosamente elaborado para agradar a todos os paladares.
+            </p>
+
+            <a class="botao" href="index.html">Conheça nossa história</a>
+            <a class="botao" href="galeria.html">Conheça nossos eventos</a>
+        </div>
+
+    </header>
+
+    <section class="cardapios">
+
+    <div id="opcoesCardapio">
+
+        <div class="card-cardapio">
+            <img src="salgadinhos.png" alt="Cardápio Tradicional">
+
+            <h2>Cardápio Tradicional</h2>
+
+            <button onclick="abrirCardapio('Tradicional')">
+                 Abrir cardápio
+            </button>
+        </div>
+
+        <div class="card-cardapio">
+             <img src="comida4.jpeg" alt="Cardápio Jantar">
+
+            <h2>Cardápio Jantar</h2>
+
+             <button onclick="abrirCardapio('Jantar')">
+                 Abrir cardápio
+            </button>
+        </div>
+
+    </div>
+
+        <div id="visualizador" class="oculto">
+
+            <button id="fechar">✕</button>
+
+            <button id="anterior">❮</button>
+
+            <img id="imagemAtual" src="" alt="Página do cardápio">
+
+            <button id="proximo">❯</button>
+
+            <p id="contador"></p>
+
+            <button id="verDescricao">Ver itens inclusos</button>
+
+            </div>
+
+        <div id="descricao" class="oculto">
+            
+        </div>
+
+    </section>
+
+
+    <section class="galeria-comidas">
+
+        <h2>Sabores que encantam</h2>
+
+        <p>Conheça algumas das delícias que fazem parte dos nossos eventos.</p>
+
+        <div class="fotos-comidas">
+
+            <div class="foto-comida">
+                <img src="salgadinhos1.png">
+                <p class="nome-comida">Salgadinhos variados</p>
+            </div>
+
+            <div class="foto-comida">
+                <img src="frios.jpeg">
+                <p class="nome-comida">Seleção de frios</p>
+            </div>
+
+            <div class="foto-comida">
+                <img src="comida1.jpeg">
+                <p class="nome-comida">Pratos preparados na hora</p>
+            </div>
+
+            <div class="foto-comida">
+                <img src="comida2.jpeg">
+                <p class="nome-comida">Refeição servida em nossos evento</p>
+            </div>
+
+            <div class="foto-comida">
+                <img src="verde.jpeg">
+                <p class="nome-comida">Doces feitos com cuidado</p>
+            </div>
+
+            <div class="foto-comida">
+                <img src="macaron.jpeg">
+                <p class="nome-comida">Doces finos que encantam</p>
+            </div>
+
+            <div class="foto-comida">
+                <img src="doceF.jpe">
+                <p class="nome-comida">Doces simples e deliciosos</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="rodape">
+        <p>© Estação Falcão — Fazendo eventos memoráveis desde 2014.</p>
+
+        <div class="redes-sociais">
+            <a href="https://wa.me/5514997851520" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+            <a href="https://www.instagram.com/buffetestacaofalcao/" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+            <a href="https://www.facebook.com/Estação_Falcão/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+    </footer>
+
+
+    <script src="cardapio.js"></script>
+</body>
+</html>

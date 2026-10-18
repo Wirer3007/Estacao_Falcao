@@ -1,0 +1,571 @@
+
+    * {
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #171614;
+        color: #f8f5ee;
+    }
+
+    /* MENU */
+
+    .menu {
+        min-height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 200px;
+        padding: 18px;
+        background: #171614;
+        border-bottom: 1px solid #51442a;
+    }
+
+    .menu a {
+        color: #f4d98b;
+        text-decoration: none;
+        font-size: 27px;
+        transition: color 0.3s;
+    }
+
+    .menu a:hover {
+        color: white;
+    }
+
+    .menu a.ativo {
+        color: #f2d78b;
+        border-bottom: 2px solid #f2d78b;
+        padding-bottom: 5px;
+    }
+
+
+/* HEADER DA GALERIA — MESMO ESTILO DA HOME */
+
+.banner-galeria {
+    position: relative;
+    min-height: 650px;
+    display: flex;
+    align-items: center;
+    padding: 45px 5%;
+    overflow: hidden;
+    background: #171614;
+    border-bottom: 1px solid #51442a;
+}
+
+#imagemBannerGaleria {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.48;
+    transition: opacity 0.5s ease;
+}
+
+.banner-galeria::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(15, 14, 12, 0.2),
+        rgba(15, 14, 12, 0.65) 48%,
+        #171614 100%
+    );
+    pointer-events: none;
+}
+
+.banner-conteudo {
+    position: relative;
+    z-index: 1;
+    width: 48%;
+    max-width: 650px;
+    margin-left: auto;
+    padding: 25px;
+}
+
+.banner-conteudo img {
+    display: block;
+    width: 180px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 25px;
+}
+
+.banner-conteudo h1 {
+    color: #f2d78b;
+    font-family: Georgia, serif;
+    font-size: clamp(34px, 3.5vw, 58px);
+    line-height: 1.15;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+
+    /* BOTÕES */
+
+    .botao {
+        display: inline-block;
+        margin-top: 22px;
+        padding: 15px 24px;
+        border: 1px solid #d7b967;
+        border-radius: 5px;
+        color: #f2d78b;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .botao:hover {
+        background: #d7b967;
+        color: #171614;
+    }
+
+    /* SEÇÃO DA GALERIA */
+
+    .secao-galeria {
+        padding: 85px 7%;
+        background: #201e1a;
+    }
+
+    .titulo-secao {
+        max-width: 750px;
+        margin: 0 auto 45px;
+        text-align: center;
+    }
+
+    .titulo-secao h2,
+    .chamada-orcamento h2 {
+        color: #f2d78b;
+        font-family: Georgia, serif;
+        font-size: clamp(30px, 4vw, 44px);
+        font-weight: normal;
+        line-height: 1.3;
+        margin: 18px 0;
+    }
+
+    .titulo-secao p,
+    .chamada-orcamento p {
+        color: #c9c4b8;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    /* FILTROS */
+
+    .filtros {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-bottom: 40px;
+    }
+
+    .filtro {
+        padding: 11px 20px;
+        background: transparent;
+        border: 1px solid #51442a;
+        border-radius: 30px;
+        color: #e3dfd5;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .filtro:hover,
+    .filtro.ativo {
+        background: #d7b967;
+        border-color: #d7b967;
+        color: #171614;
+    }
+
+    /* MOSAICO */
+
+    .grade-galeria {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: 230px;
+        grid-auto-flow: dense;
+        gap: 16px;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .item-galeria {
+        position: relative;
+        min-width: 0;
+        overflow: hidden;
+        background: #292620;
+        border: 1px solid #51442a;
+        border-radius: 8px;
+        cursor: pointer;
+        isolation: isolate;
+    }
+
+    .item-galeria img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.5s;
+    }
+
+    .item-galeria:hover img {
+        transform: scale(1.07);
+    }
+
+    .item-galeria::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            transparent 35%,
+            rgba(12, 11, 9, 0.88)
+        );
+        pointer-events: none;
+    }
+
+    .item-galeria.grande {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .item-galeria.alto {
+        grid-row: span 2;
+    }
+
+    .item-galeria.largo {
+        grid-column: span 2;
+    }
+
+    .legenda-foto {
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 22px;
+        pointer-events: none;
+    }
+
+    .legenda-foto span {
+        color: #f2d78b;
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .legenda-foto h3 {
+        margin: 9px 0 0;
+        color: white;
+        font-family: Georgia, serif;
+        font-size: 23px;
+        font-weight: normal;
+    }
+
+    /* ANIMAÇÃO DOS FILTROS */
+
+    .item-galeria.oculto {
+        display: none;
+    }
+
+    /* CHAMADA PARA CONTATO */
+
+    .chamada-orcamento {
+        padding: 90px 7%;
+        text-align: center;
+        background: #171614;
+    }
+
+    .chamada-orcamento h2 {
+        max-width: 750px;
+        margin: 20px auto;
+    }
+
+    .chamada-orcamento p {
+        max-width: 650px;
+        margin: 0 auto;
+    }
+
+    /* VISUALIZAÇÃO AMPLIADA */
+
+    .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        align-items: center;
+        justify-content: center;
+        padding: 65px 80px;
+        background: rgba(10, 9, 8, 0.96);
+    }
+
+    .lightbox.aberto {
+        display: flex;
+    }
+
+    .lightbox img {
+        display: block;
+        max-width: 100%;
+        max-height: 78vh;
+        object-fit: contain;
+        border-radius: 5px;
+    }
+
+    .lightbox button {
+        position: absolute;
+        border: 1px solid #d7b967;
+        border-radius: 5px;
+        background: #201e1a;
+        color: #f2d78b;
+        font-size: 24px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .lightbox button:hover {
+        background: #d7b967;
+        color: #171614;
+    }
+
+    .lightbox .fechar {
+        top: 25px;
+        right: 30px;
+        padding: 8px 14px;
+    }
+
+    .lightbox .navegar {
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 12px 16px;
+    }
+
+    .lightbox .anterior {
+        left: 25px;
+    }
+
+    .lightbox .proximo {
+        right: 25px;
+    }
+
+    #contador {
+        position: absolute;
+        bottom: 12px;
+        color: #c9c4b8;
+        font-size: 14px;
+    }
+
+    /* RODAPÉ */
+
+    .rodape {
+        padding: 25px 7%;
+        text-align: center;
+        background: #201e1a;
+        border-top: 1px solid #51442a;
+    }
+
+    .rodape p {
+        color: #c9c4b8;
+        font-size: 20px;
+        line-height: 1.7;
+    }
+
+    .rodape .redes-sociais {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .rodape .redes-sociais a {
+        color: #f2d78b;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.3s;
+    }
+
+    .rodape .redes-sociais a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+
+    /* TABLETS */
+
+@media (max-width: 1000px) {
+    .menu {
+        gap: 70px;
+    }
+
+    .menu a.ativo {
+        color: #f2d78b;
+        border-bottom: 2px solid #f2d78b;
+        padding-bottom: 5px;
+    }
+
+        
+    .banner-galeria {
+        min-height: 680px;
+        padding: 25px 6%;
+        align-items: flex-end;
+    }
+
+    #imagemBannerGaleria {
+        object-position: center;
+        opacity: 0.4;
+    }
+
+    .banner-galeria::after {
+        background: linear-gradient(
+            0deg,
+            rgba(23, 22, 20, 0.98),
+            rgba(23, 22, 20, 0.35)
+        );
+    }
+
+    .banner-conteudo {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 15px 5px 35px;
+    }
+
+    .banner-conteudo img {
+        width: 125px;
+        max-width: 55%;
+        margin-bottom: 25px;
+    }
+
+    .banner-conteudo h1 {
+        font-size: 34px;
+    }
+
+}
+
+/* CELULARES */
+
+@media (max-width: 700px) {
+    .menu {
+        min-height: auto;
+        gap: 12px;
+        padding: 16px 8px;
+    }
+
+    .menu a {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .banner-galeria {
+        min-height: 600px;
+        padding: 40px 7%;
+        background-position: center;
+    }
+
+    .banner-conteudo h1 {
+        font-size: 39px;
+    }
+
+    .banner-conteudo > p:not(.sobre-titulo) {
+        font-size: 16px;
+    }
+
+    .secao-galeria {
+        padding: 55px 5%;
+    }
+
+    .titulo-secao p {
+        font-size: 15px;
+    }
+
+    .filtros {
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+
+    .filtro {
+        padding: 9px 13px;
+        font-size: 13px;
+    }
+
+    .grade-galeria {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 180px;
+        gap: 10px;
+    }
+
+    .item-galeria.grande {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .item-galeria.alto {
+        grid-row: span 2;
+    }
+
+    .item-galeria.largo {
+        grid-column: span 2;
+    }
+
+    .legenda-foto {
+        padding: 12px;
+    }
+
+    .legenda-foto span {
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+
+    .legenda-foto h3 {
+        font-size: 17px;
+    }
+
+    .chamada-orcamento {
+        padding: 60px 6%;
+    }
+
+    .lightbox {
+        padding: 65px 12px;
+    }
+
+    .lightbox .fechar {
+        top: 15px;
+        right: 15px;
+    }
+
+    .lightbox .anterior {
+        left: 8px;
+    }
+
+    .lightbox .proximo {
+        right: 8px;
+    }
+
+    .lightbox .navegar {
+        padding: 10px;
+        font-size: 18px;
+    }
+}
+
+/* TELAS MUITO PEQUENAS */
+
+@media (max-width: 380px) {
+    .grade-galeria {
+        grid-auto-rows: 145px;
+    }
+
+    .legenda-foto h3 {
+        font-size: 14px;
+    }
+
+    .filtro {
+        padding: 8px 10px;
+        font-size: 12px;
+    }
+}

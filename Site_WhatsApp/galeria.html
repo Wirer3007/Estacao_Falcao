@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeria | Estação Falcão</title>
+
+    <link rel="stylesheet" href="galeria.css">
+</head>
+<body>
+
+    <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="cardapio.html">Cardápio</a>
+        <a href="galeria.html" class="ativo" >Galeria</a>
+    </nav>
+
+    
+    <header class="banner-galeria">
+        <img
+            id="imagemBannerGaleria"
+            src="15AR.jpeg"
+            alt="Espaço decorado para eventos"
+        >
+
+        <div class="banner-conteudo">
+            <img src="31859.png" alt="Logo Estação Falcão">
+
+            <p class="sobre-titulo">ESTAÇÃO FALCÃO</p>
+
+            <h1>Momentos que merecem ser lembrados</h1>
+
+            <p>
+                Cada evento conta uma história.
+                Conheça alguns dos momentos especiais
+                realizados em nosso espaço.
+            </p>
+
+            <a class="botao" href="index.html">Conheça nossa história</a>
+            <a class="botao" href="cardapio.html">Conheça nosso cardápio</a>
+        </div>
+    </header>
+
+
+    <main>
+        <section class="secao-galeria" id="galeria">
+
+            <div class="titulo-secao">
+                <span>NOSSOS EVENTOS</span>
+                <h2>Uma coleção de momentos especiais</h2>
+                <p>
+                    Explore os detalhes, as decorações e as celebrações
+                    que tornam cada evento único.
+                </p>
+            </div>
+
+            <div class="filtros">
+                <button class="filtro ativo" data-categoria="todos">
+                    Todos
+                </button>
+
+                <button class="filtro" data-categoria="casamento">
+                    Casamentos
+                </button>
+
+                <button class="filtro" data-categoria="aniversario">
+                    Aniversários
+                </button>
+
+                <button class="filtro" data-categoria="quinze-anos">
+                    15 anos
+                </button>
+
+                <button class="filtro" data-categoria="decoracao">
+                    Decorações
+                </button>
+
+                <button class="filtro" data-categoria="buffet">
+                    Buffet
+                </button>
+            </div>
+
+            <div class="grade-galeria">
+
+                <article class="item-galeria grande"
+                    data-categoria="casamento">
+                    <img src="casamento.jpeg"
+                        alt="Decoração de casamento">
+                    <div class="legenda-foto">
+                        <span>CASAMENTOS</span>
+                        <h3>Um dia inesquecível</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="aniversario">
+                    <img src="kid.jpeg"
+                        alt="Festa de aniversário">
+                    <div class="legenda-foto">
+                        <span>ANIVERSÁRIOS</span>
+                        <h3>Celebrar a vida</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="decoracao">
+                    <img src="Pcolorido.jpeg"
+                        alt="Detalhes da decoração">
+                    <div class="legenda-foto">
+                        <span>DECORAÇÕES</span>
+                        <h3>Detalhes que encantam</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="quinze-anos">
+                    <img src="15AR.jpeg"
+                        alt="Festa de 15 anos">
+                    <div class="legenda-foto">
+                        <span>15 ANOS</span>
+                        <h3>Uma noite especial</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria alto"
+                    data-categoria="buffet">
+                    <img src="comida1.jpeg"
+                        alt="Mesa de buffet">
+                    <div class="legenda-foto">
+                        <span>BUFFET</span>
+                        <h3>Sabores para celebrar</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="casamento">
+                    <img src="mesa.jpeg"
+                        alt="Mesa decorada para casamento">
+                    <div class="legenda-foto">
+                        <span>CASAMENTOS</span>
+                        <h3>Elegância em cada detalhe</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="aniversario">
+                    <img src="menina2.jpeg"
+                        alt="Decoração de aniversário">
+                    <div class="legenda-foto">
+                        <span>ANIVERSÁRIOS</span>
+                        <h3>Momentos de alegria</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria largo"
+                    data-categoria="decoracao">
+                    <img src="azulL.jpeg"
+                        alt="Ambiente decorado para evento">
+                    <div class="legenda-foto">
+                        <span>DECORAÇÕES</span>
+                        <h3>Um ambiente extraordinário</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="quinze-anos">
+                    <img src="azul.jpeg"
+                        alt="Decoração de aniversário">
+                    <div class="legenda-foto">
+                        <span>15 ANOS</span>
+                        <h3>Uma festa memorável</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria grande"
+                    data-categoria="quinze-anos">
+                    <img src="menina.jpeg"
+                        alt="Decoração de casamento">
+                    <div class="legenda-foto">
+                        <span>15 ANOS</span>
+                        <h3>Memórias que ficarão para sempre</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria largo"
+                    data-categoria="decoracao">
+                    <img src="macaron.jpeg"
+                        alt="Ambiente decorado para evento">
+                    <div class="legenda-foto">
+                        <span>DECORAÇÕES</span>
+                        <h3>Doces para todos os paladares</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="buffet">
+                    <img src="comida2.jpeg"
+                        alt="Mesa de buffet">
+                    <div class="legenda-foto">
+                        <span>BUFFET</span>
+                        <h3>Sabores equilibrados</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="decoracao">
+                    <img src="memory.jpeg"
+                        alt="Mesa de buffet">
+                    <div class="legenda-foto">
+                        <span>LEMBRANCINHAS</span>
+                        <h3>Lembranças saborosas</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="buffet">
+                    <img src="comida5.jpeg"
+                        alt="Mesa de buffet">
+                    <div class="legenda-foto">
+                        <span>BUFFET</span>
+                        <h3>Refeições deliciosas</h3>
+                    </div>
+                </article>
+
+                <article class="item-galeria"
+                    data-categoria="decoracao">
+                    <img src="espaco.jpeg"
+                        alt="Mesa de buffet">
+                    <div class="legenda-foto">
+                        <span>DECORAÇÃO</span>
+                        <h3>Espaço perfeito para sua festa</h3>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="chamada-orcamento">
+            <span>SEU EVENTO COMEÇA AQUI</span>
+
+            <h2>Vamos criar momentos inesquecíveis?</h2>
+
+            <p>
+                Entre em contato conosco pelo WhatsApp e comece a planejar
+                sua próxima celebração.
+            </p>
+
+        </section>
+    </main>
+
+    
+    <div class="lightbox" id="lightbox"
+        role="dialog" aria-modal="true"
+        aria-label="Visualização da fotografia"
+        aria-hidden="true">
+
+        <button class="fechar" id="fechar"
+            aria-label="Fechar imagem">✕</button>
+
+        <button class="navegar anterior" id="anterior"
+            aria-label="Imagem anterior">❮</button>
+
+        <img id="imagemAmpliada" src="" alt="">
+
+        <button class="navegar proximo" id="proximo"
+            aria-label="Próxima imagem">❯</button>
+
+        <p id="contador"></p>
+    </div>
+
+    <footer class="rodape">
+        <p>© Estação Falcão — Momentos especiais merecem um lugar especial.</p>
+
+        <div class="redes-sociais">
+            <a href="https://wa.me/5514997851520" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+
+            <a href="https://www.instagram.com/buffetestacaofalcao/" target="_blank" rel="noopener noreferrer">Instagram</a>
+
+            <a href="https://www.facebook.com/Estação_Falcão/" target="_blank" rel="noopener noreferrer">Facebook</a>
+        </div>
+
+    </footer>
+
+    <script src="galeria.js"></script>
+</body>
+</html>
